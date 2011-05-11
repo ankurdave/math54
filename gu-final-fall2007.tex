@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+\newcommand{\Real}{\mathbb{R}}
+
+\begin{document}
+
+\begin{enumerate}
+
+\setcounter{enumi}{4}
+\item Let $u$ and $v$ be vectors in $\Real^n$. Form the matrix
+\[ G = \left(
+\begin{array}{cc}
+u^T u & u^T v \\
+v^T u & v^T v
+\end{array}
+\right) \].
+
+Show that $u$ and $v$ are linearly independent if and only if $G$ is invertible.
+
+\begin{proof}
+We first prove that $G$ is invertible implies that $u$ and $v$ are linearly independent. We do this using proof by contraposition. If $u$ and $v$ are not linearly independent, then $u = kv$ for some $k \in \Real$. We can then write $G$ as follows:
+\begin{align*}
+G &= \left(
+\begin{array}{cc}
+(kv) \cdot (kv) & (kv) \cdot v \\
+v \cdot (kv) & v \cdot v
+\end{array}
+\right) \\
+\det(G) &= k^2 (v \cdot v)^2 - k^2 (v \cdot v)^2 = 0
+\end{align*}
+Therefore $u,v \mbox{ not linearly independent} \implies G \mbox{ not invertible}$, or equivalently, $G \mbox{ invertible} \implies u,v \mbox{ linearly independent}$.
+
+Next we prove that $u$ and $v$ being linearly independent implies that $G$ is invertible. From the original matrix, $\det(G) = (u \cdot u) (v \cdot v) - (u \cdot v)^2$.
+
+We can use the Cauchy--Schwarz inequality to prove that $\det(G) > 0$. It states that $u \cdot v \leq |u| |v|$. But if $u$ and $v$ are linearly independent, then we can strengthen this assertion to state that $u \cdot v < |u| |v|$. Equivalently, $u \cdot v < \sqrt{(u \cdot u)(v \cdot v)}$. Squaring both sides, $(u \cdot v)^2 < (u \cdot u)(v \cdot v)$.
+
+Therefore $\det(G) = (u \cdot u) (v \cdot v) - (u \cdot v)^2 > 0$, so $G$ must be invertible if $u$ and $v$ are linearly independent. This completes the proof that $u,v \mbox{ linearly independent} \iff G \mbox{ invertible}$.
+\end{proof}
+
+\end{enumerate}
+
+\end{document}
