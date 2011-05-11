@@ -34,7 +34,7 @@ Therefore $u,v \mbox{ not linearly independent} \implies G \mbox{ not invertible
 
 Next we prove that $u$ and $v$ being linearly independent implies that $G$ is invertible. From the original matrix, $\det(G) = (u \cdot u) (v \cdot v) - (u \cdot v)^2$.
 
-We can use the Cauchy--Schwarz inequality to prove that $\det(G) > 0$. It states that $u \cdot v \leq |u| |v|$. But if $u$ and $v$ are linearly independent, then we can strengthen this assertion to state that $u \cdot v < |u| |v|$. Equivalently, $u \cdot v < \sqrt{(u \cdot u)(v \cdot v)}$. Squaring both sides, $(u \cdot v)^2 < (u \cdot u)(v \cdot v)$.
+We can use the Cauchy--Schwarz inequality to prove that $\det(G) > 0$. It states that $|u \cdot v| \leq |u| |v|$. But if $u$ and $v$ are linearly independent, then we can strengthen this assertion to state that $|u \cdot v| < |u| |v|$. Equivalently, $|u \cdot v| < \sqrt{(u \cdot u)(v \cdot v)}$. Squaring both sides, $(u \cdot v)^2 < (u \cdot u)(v \cdot v)$.
 
 Therefore $\det(G) = (u \cdot u) (v \cdot v) - (u \cdot v)^2 > 0$, so $G$ must be invertible if $u$ and $v$ are linearly independent. This completes the proof that $u,v \mbox{ linearly independent} \iff G \mbox{ invertible}$.
 \end{proof}
